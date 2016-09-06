@@ -1,0 +1,23 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+
+    <persistence-unit name="ExamplePU" transaction-type="JTA">
+        <provider>org.hibernate.ogm.jpa.HibernateOgmPersistence</provider>
+
+        <properties>
+            <property name="hibernate.transaction.jta.platform"
+                      value="org.hibernate.service.jta.platform.internal.JBossAppServerJtaPlatform" />
+
+            <property name="jboss.as.jpa.providerModule" value="org.hibernate.ogm"/>
+
+            <property name="hibernate.ogm.datastore.provider" value="mongodb"/>
+            <property name="hibernate.ogm.datastore.database" value="test"/>
+            <property name="hibernate.ogm.datastore.host" value="localhost"/>
+            <!--<property name="hibernate.ogm.datastore.port" value="27017"/>
+            <property name="hibernate.ogm.datastore.username" value="admin"/>
+            <property name="hibernate.ogm.datastore.password" value="admin"/>-->
+        </properties>
+    </persistence-unit>
+</persistence>
